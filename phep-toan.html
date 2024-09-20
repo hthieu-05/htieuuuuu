@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phép Toán Cơ Bản</title>
+    <script>
+        function calculate() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let sum = a + b;
+            let difference = a - b;
+            let product = a * b;
+            let quotient = b !== 0 ? (a / b) : "Không thể chia cho 0";
+            
+            document.getElementById("result").innerHTML = `
+                Tổng: ${sum} <br>
+                Hiệu: ${difference} <br>
+                Tích: ${product} <br>
+                Thương: ${quotient}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h2>Phép Toán Cơ Bản</h2>
+    <label for="num1">Số a: </label>
+    <input type="number" id="num1">
+    <label for="num2">Số b: </label>
+    <input type="number" id="num2">
+    <button onclick="calculate()">Tính</button>
+    <p id="result"></p>
+    <a href="index.html">Trở về trang chủ</a>
+</body>
+</html>

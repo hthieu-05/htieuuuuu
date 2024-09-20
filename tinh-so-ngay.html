@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Số Ngày Của Một Tháng</title>
+    <script>
+        function calculateDays() {
+            let month = parseInt(document.getElementById("month").value);
+            let year = parseInt(document.getElementById("year").value);
+            let days;
+
+            if (month === 2) {
+                if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                    days = 29;
+                } else {
+                    days = 28;
+                }
+            } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+                days = 30;
+            } else {
+                days = 31;
+            }
+
+            document.getElementById("daysResult").innerHTML = `Tháng ${month} năm ${year} có ${days} ngày.`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Tính Số Ngày Của Một Tháng</h2>
+    <label for="month">Tháng: </label>
+    <input type="number" id="month" min="1" max="12">
+    <label for="year">Năm: </label>
+    <input type="number" id="year">
+    <button onclick="calculateDays()">Tính số ngày</button>
+    <p id="daysResult"></p>
+    <a href="index.html">Trở về trang chủ</a>
+</body>
+</html>

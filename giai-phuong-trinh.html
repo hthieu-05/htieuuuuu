@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải Phương Trình Bậc Nhất</title>
+    <script>
+        function solveEquation() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let result;
+
+            if (a === 0) {
+                result = (b === 0) ? "Phương trình vô số nghiệm" : "Phương trình vô nghiệm";
+            } else {
+                result = `Nghiệm của phương trình là x = ${-b / a}`;
+            }
+
+            document.getElementById("equationResult").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Giải Phương Trình Bậc Nhất (ax + b = 0)</h2>
+    <label for="a">Số a: </label>
+    <input type="number" id="a">
+    <label for="b">Số b: </label>
+    <input type="number" id="b">
+    <button onclick="solveEquation()">Giải phương trình</button>
+    <p id="equationResult"></p>
+    <a href="index.html">Trở về trang chủ</a>
+</body>
+</html>
